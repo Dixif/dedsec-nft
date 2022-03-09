@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './componants/Header';
+import CollectionCard from './componants/CollectionCard';
+import { useState, useEffect } from 'react'
+import axios from 'axios';
+import PunkList from './componants/PunkList';
+import Main from './componants/Main';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [punkListData, setPunkListData] = useState([])
+  useEffect(() => {
+    const getMyNfts = async () => {
+      const openseaData = await axios.get('https://testnets-api.opensea.io/assets?asset_contract_address=0xC1718eEd46A4bf097D2149af99C95916194266D7&order_direction=asc')
+
+       console.log(openseaData.data.assets)
+      setPunkListData(openseaData.data.assets)
+    }
+    return getMyNfts()
+  }, [])
+  return <div className='app'>
+    <Header />
+    <Main />
+    <PunkList punkListData={punkListData}/>
+  </div>
+
 }
 
 export default App;
