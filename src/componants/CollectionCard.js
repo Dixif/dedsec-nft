@@ -1,7 +1,7 @@
 import React from 'react'
 import weth from '../Assets/weth.png'
 import './CollectionCard.css'
-const CollectionCard = ({key,id, name ,traits, image}) => {
+const CollectionCard = ({id, name ,traits, image}) => {
     return (
         <div className='collectionCard'>
             <img src={image} alt=''></img>

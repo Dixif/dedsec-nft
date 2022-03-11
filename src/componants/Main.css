@@ -1,5 +1,5 @@
 .main{
-    max-height: 50vh;
+    max-height: 63vh;
 }
 
 .mainContent{
@@ -14,17 +14,16 @@
     align-items: center;
     justify-content: center;
 }
-.selectedPunk {
-    object-fit: contain;
-    max-width: min(30vw, 40vh);
-    max-height: 30vw;
-}
-
 .punkContainer{
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     margin-right: 20px;
+}
+.selectedPunk {
+    object-fit: contain;
+    max-width: min(30vw, 40vh);
+    max-height: 30vw;
 }
 
 .punkDetails{
@@ -34,8 +33,8 @@
     flex: 0.75;
 }
 .title {
-    font-size: 96px;
-    font-weight: 800;
+    font-size: 80px;
+    font-weight: 700;
 }
 .itemNumber {
     color: #a1a5b0;
